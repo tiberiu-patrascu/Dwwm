@@ -1,0 +1,182 @@
+[{
+        "id": 1,
+        "name": "EA ABR COLMAR",
+        "lat": 48.0955586,
+        "lng": 7.3768371,
+        "pays": "France",
+        "tel": "03 89 29 34 79",
+        "color": "green"
+    },
+    {
+        "id": 2,
+        "name": "EA ABR ST LOUIS",
+        "lat": 47.5829962,
+        "lng": 7.5665848,
+        "pays": "France",
+        "tel": "03 89 30 31 41",
+        "color": "green"
+    },
+    {
+        "id": 3,
+        "name": "EA CAP VERS",
+        "lat": 47.956849,
+        "lng": 7.3026445,
+        "pays": "France",
+        "tel": "03 89 78 73 15",
+        "color": "green"
+    },
+    {
+        "id": 4,
+        "name": "EA Les Papillons Blancs",
+        "lat": 47.8085328,
+        "lng": 7.3080093,
+        "pays": "France",
+        "tel": "03 89 57 02 10",
+        "color": "green"
+    },
+    {
+        "id": 5,
+        "name": "EA Les Papillons Blancs",
+        "lat": 48.0989226,
+        "lng": 7.3687508,
+        "pays": "France",
+        "tel": "03 89 41 14 78",
+        "color": "green"
+    },
+    {
+        "id": 6,
+        "name": "EA LES TOURNESOLS",
+        "lat": 48.2468,
+        "lng": 7.18528,
+        "pays": "France",
+        "tel": "03 89 58 48 55",
+        "color": "green"
+    },
+    {
+        "id": 7,
+        "name": "EA SAINT ANDRE (ass. Ad􀳦le de Glaubitz)",
+        "lat": 47.7983567,
+        "lng": 7.1632813,
+        "pays": "France",
+        "tel": "03 89 75 30 30",
+        "color": "green"
+    },
+    {
+        "id": 8,
+        "name": "EA SINCLAIR",
+        "lat": 47.7447349,
+        "lng": 7.343943,
+        "pays": "France",
+        "tel": "03 89 56 69 04",
+        "color": "green"
+    },
+    {
+        "id": 9,
+        "name": "ESAT AFAPEI Bartenheim",
+        "lat": 47.6323868,
+        "lng": 7.4894291,
+        "pays": "France",
+        "tel": "03 89 68 20 43",
+        "color": "blue"
+    },
+    {
+        "id": 10,
+        "name": "ESAT ALTKIRCH (ass Marie Pire)",
+        "lat": 47.6224617,
+        "lng": 7.2465022,
+        "pays": "France",
+        "tel": "03 89 40 01 00",
+        "color": "blue"
+    },
+    {
+        "id": 11,
+        "name": "ESAT BIESHEIM",
+        "lat": 48.0418986,
+        "lng": 7.5572003,
+        "pays": "France",
+        "tel": "03 89 30 31 41",
+        "color": "blue"
+    },
+    {
+        "id": 12,
+        "name": "ESAT Blanchisserie (ass. Marie Pire)",
+        "lat": 47.6248845,
+        "lng": 7.2283357,
+        "pays": "France",
+        "tel": "03 89 08 38 85",
+        "color": "blue"
+    },
+    {
+        "id": 13,
+        "name": "ESAT DANNEMARIE (APAEI du Sundgau)",
+        "lat": 47.6273494,
+        "lng": 7.1142328,
+        "pays": "France",
+        "tel": "03 89 08 07 80",
+        "color": "blue"
+    },
+    {
+        "id": 14,
+        "name": "ESAT de l'APF",
+        "lat": 47.7594815,
+        "lng": 7.4003168,
+        "pays": "France",
+        "tel": "03 89 31 85 60",
+        "color": "blue"
+    },
+    {
+        "id": 15,
+        "name": "ESAT du Rangen (Au Fil de la Vie)",
+        "lat": 47.8106195,
+        "lng": 7.1094452,
+        "pays": "France",
+        "tel": "03 89 37 38 67",
+        "color": "blue"
+    },
+    {
+        "id": 16,
+        "name": "ESAT EGUISHEIM",
+        "lat": 48.0411946,
+        "lng": 7.3129803,
+        "pays": "France",
+        "tel": "03 89 41 76 36",
+        "color": "blue"
+    },
+    {
+        "id": 17,
+        "name": "ESAT Institut Les Tournesols",
+        "lat": 48.1287768,
+        "lng": 7.3514981,
+        "pays": "France",
+        "tel": "03 89 21 00 39",
+        "color": "blue"
+    },
+    {
+        "id": 18,
+        "name": "ESAT Institut Les Tournesols",
+        "lat": 48.2468,
+        "lng": 7.18528,
+        "pays": "France",
+        "tel": "0389584855",
+        "color": "blue"
+    },
+    {
+        "id": 19,
+        "name": "ESAT Les Papillons Blancs",
+        "lat": 47.7694149,
+        "lng": 7.3775515,
+        "pays": "France",
+        "tel": "03 89 32 78 20",
+        "color": "blue"
+    },
+    {
+        "id": 20,
+        "name": "ESAT Les Papillons Blancs",
+        "lat": 47.9095289,
+        "lng": 7.2560692,
+        "pays": "France",
+        "tel": "03 89 31 37 40",
+        "color": "blue"
+    }
+    
+]

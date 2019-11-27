@@ -1,0 +1,155 @@
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=UA-112402450-1&key="></script>
+    <script src="http://maps.googleapis.com/maps/api/js?language=fr"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3VRFn3NG0mpeW2NPGxu8dhb0zsTd7KUs"></script> -->
+    <script src="map.js"></script>
+    <link rel="stylesheet" href="vulcan.css">
+    <title>Vulcans</title>
+
+    <script>
+        $(document).ready(
+            function () {
+                ajouterButtonMenu();
+                visibiliteMenu();
+            }
+        );
+
+        $(window).resize(function () {
+            visibiliteMenu();
+        });
+
+        function ajouterButtonMenu() {
+            $(".navBar").before(
+                '<div id="btnMenu"><a href="#">☰</a></div>'
+            );
+            $("#btnMenu").click(function () {
+                $(".navBar").toggle(500);
+            });
+        };
+
+        function visibiliteMenu() {
+            var largeur = document.body.clientWidth;
+            if (largeur < 760) {
+                $("#btnMenu").show(500);
+                $(".navBar").hide(500);
+            } else {
+                $("#btnMenu").hide(500);
+                $(".navBar").show(500);
+            }
+        };
+    </script>
+
+</head>
+
+
+<body>
+    <header id="header">
+
+        <div class="titre">
+            <h1>Aventure et Volcans</h1>
+            <div class="btn-group">
+                <!-- <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i> </a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a> -->
+                <a href="#" class="monCompte" role="button">Mon Compte</a>
+            </div>
+        </div>
+
+        <nav class="navigation">
+            <ul class="navBar">
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Voyages</a></li>
+                <li><a href="#">Volcans</a></li>
+                <li><a href="#">Reservation</a></li>
+                <li><a href="#">Qui sommes nous ?</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- carousel avec javaScript pure volcano2.js -->
+    <fieldset id="legende">
+        <legend>Choisir vos diaporamas !</legend>
+        <label for="">Slide de départ</label>
+        <input type="number" name="min" id="min" value="1">
+        <br>
+        <label for="">Slide de fin</label>
+        <input type="number" name="" id="max" value="24">
+        <br>
+        <!-- <input type="button" class="monCompte" value="Valider" id="validation"> -->
+        <a href="#" role="button" class="monCompte" id="validation">Valider</a>
+    </fieldset> -->
+    <div id="animation" class="carousel slide" data-ride="carousel">
+        
+    </div>
+
+    <section class="description">
+        <h2 id="desc">Formatia Catelu Band - formatie de cover-uri :: Muzica pentru petreceri corporate :: Muzica pentru
+            nunta
+        </h2>
+
+        <h3>Formatie de cover-uri</h3>
+        <p>De la cele mai vechi melodii pana la cele mai recente hituri, toate piesele sunt interpretate intr-un stil
+            unic si original, intr-un show total ce creeaza o ingemanare perfecta intre formatie si publicul prezent.
+            Formatia se poate adapta cu usurinta la piese si genuri muzicale diferite, datorita faptului ca in
+            componenta ei intra multi vocalisti care au timbre diferite. In acest fel pot fi puse in scena cele mai
+            iubite cantece.</p>
+        <h3>Formatie pentru petreceri de firma</h3>
+        <p>Muzica buna, fiind sufletul distractiei, nu trebuie sa lipseasca de la nici o petrecere de firma, iar
+            Formatia Vis are in portofoliu numeroase astfel de evenimente. Firme mari si mici au optat in decursul
+            timpului sa isi motiveze angajatii cu petreceri revigorante la care noi am fost raspunzatori cu voia buna.
+        </p>
+        <h3>Formatie pentru o nunta de ViS</h3>
+        <p>Un evenimet special cum este nunta necesita si o petrecere speciala. Muzica de la petrecere ocupa un rol
+            esential in reusita deplina a unei zile incarcata de emotie. Noi, Formatia Vis avem experienta si aparatura
+            necesara pentru a transforma o zi minunata intr-una de neuitat, atat pentru dumneavoastra cat si pentru toti
+            invitatii. Noi va oferim muzica pentru o nunta de Vis..</p>
+        <h3>Disponibilitatea formatiei in Bucuresti, Valcea, Ploiesti ...</h3>
+        <p>Membrii formatiei sunt din Pitesti, dar realizam show-uri muzicale in orice localitate din Romania
+            (Bucuresti, Ploiesti, Craiova, Valcea etc). Deplasarile din alte localitati reprezinta pentru formatia
+            noastra o ocazie minunat de a ne crea mai multi prieteni, prin urmare, daca cele prezentate va plac si
+            doriti o oferta de pret personalizata, nu ezitati sa ne contactati la telefonul: 0743.141.838, prin email pe
+            pagina de contact sau pe pagina de facebook.</p>
+        <div class="map">
+            <img src="photos_volcans/map.png" alt="">
+            <div class="decouvrez">
+                <a href="#" role="button">Decouvrez le Monde <i class="fab fa-avianex"></i></a>
+            </div>
+            <p>Avec notre agence vous pouvez decouvrir le monde entier à parir de <strong>19€/ttc</strong> inclus</p>
+        </div>
+
+        <div id="carte"></div>
+
+    </section>
+
+    <footer>
+        <p>Designed by Tib</p>
+        <a href="#" class="totop"><i class="fas fa-arrow-up"></i></a>
+    </footer>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="vulcan-js_Pure.js"></script>
+</body>
+
+</html>

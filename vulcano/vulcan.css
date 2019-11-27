@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css?family=Chilanka&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Long+Cang&display=swap');
+
+* {
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* background-color: #2d3436; */
+    font-family: 'Chilanka', cursive;
+    background-color: #1C1C1C;
+    background-image: url("photos_volcans/27.jpg");
+    background-position: center;
+    background-size: cover;
+    /* display: grid;
+    grid-template-areas: "a b" "c c" "d d" "f f"; */
+}
+
+
+#header {
+    background-color: #0000006b;
+    height: auto;
+    width: 100%;
+}
+
+.titre {
+    display: grid;
+    grid-template-areas: "h j";
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: auto;
+    border-bottom: 3px solid #ffffff;
+
+}
+
+.titre h1 {
+    grid-area: h;
+    color: aliceblue;
+    font-family: 'Long Cang', cursive;
+    font-size: 60px;
+}
+
+.btn-group a {
+    grid-area: j;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Long Cang', cursive;
+    text-align: center;   
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 50px;
+}
+
+.monCompte {
+    grid-area: j;
+    background: linear-gradient(to right, #fcb315b7, #e9401fc2);
+    margin: auto;
+    color: #ffffff;
+    position: relative;
+    z-index: 2;
+}
+
+.monCompte::before {
+    background: linear-gradient(to left, #fcb315dc, #e9401fc2);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.8s ease;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+
+}
+
+.monCompte:hover {
+    color: #ffffff;
+}
+
+.monCompte:hover::before {
+    width: 100%;
+}
+
+.navigation {
+    font-size: 30px;
+    width: 100%;
+    font-family: 'Long Cang', cursive;
+    text-align: center;
+    background-color: #f0ebeb;
+    z-index: 100;
+    padding-top: 10px;
+
+}
+
+.navBar li {
+    display: inline;
+    list-style-type: none;
+    position: relative;
+    line-height: 50px;
+    overflow: hidden;
+    transition: 1 all ease-out;
+    z-index: 2;
+}
+
+.navBar a {
+    text-decoration: none;
+    color: #080808ef;
+
+}
+
+.navBar li::before {
+    background: linear-gradient(to right, #df9c0eb7, #e9401fc2);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: all 0.8s ease;
+    width: 0;
+    height: 100%;
+}
+
+.navBar li:hover::before {
+    width: 100%;
+}
+
+#btnMenu a {
+    text-decoration: none;
+    list-style: none;
+    color: #000;
+}
+
+#animation {
+    width: 80%;
+    height: 80%;
+    margin-top: 80px;
+    border: 15px solid #ffffff;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-top: 0px;
+}
+
+h5 {
+    background: linear-gradient(to right, #e98007ad, #cc321496);
+    font-size: 25px;
+    color: white;
+    font-family: 'Chilanka', cursive;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.description {
+    width: 80%;
+    padding: 20px;
+    margin: auto;
+    background-color: #0000009a;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.description p {
+    color: #fff;
+    font-family: 'Long Cang', cursive;
+    font-size: 27px;
+}
+
+.description h2 {
+    font-family: 'Long Cang', cursive;
+    color: #fff;
+    text-align: center;
+    margin-top: 70px;
+    font-size: 35px;
+
+}
+
+.decouvrez{
+    width: 20%;
+    height: 50px;
+    background: linear-gradient(to right, #e98007ad, #cc321496);
+}
+
+.decouvrez a{
+    color: #fff;
+    text-decoration: none;
+    list-style: none;
+    line-height: 50px;
+}
+.description h3 {
+    font-family: 'Long Cang', cursive;
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    background-color: #F0EBEB;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Long Cang', cursive;
+    font-size: 35px;
+
+}
+
+footer p {
+    margin-bottom: 0px;
+}
+
+.totop {
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(to right, #fcb315b7, #e9401fc2);
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+}
+
+.totop i {
+    color: #fff;
+    margin: auto;
+    line-height: 35px;
+    font-size: 25px;
+}
+
+#legende {
+    color: #fff;
+    font-family: 'Long Cang', cursive;
+    margin: auto;
+    padding: 0;
+    max-width: 60%;
+    text-align: center;
+}
+
+#legende label {
+    width: 230px;
+    font-size: 22px;
+}
+#legend input{
+    font-size: 22px;
+}
+legend {
+    font-size: 40px;
+}
+
+#legende a {
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    line-height: 50px;
+}
+.map {
+    width: 100%;
+    text-align: center;
+}
+
+.map img {
+    width: 70%;
+
+}
+
+#carte {
+    width: 100%;
+    height: 60%;
+}
+
+
+@media (max-width: 480px) {
+    .titre{
+        display: none;
+    }
+    .navigation {
+        font-size: 25px;
+    }
+    .navBar li {
+        display: block;
+        width: 70%;
+    }
+
+    #animation {
+        display: none;
+    }
+
+    #carte {
+        display: none;
+    }
+    .titre h1{
+        font-size: 23px;
+        line-height: 70px;
+        text-align: center;
+    }
+    #legende{
+        display: none;
+    }
+    #animation{
+        display: none;
+    }
+    .decouvrez{
+        width: 50%;
+        height: 30px;
+        
+    }
+    .decouvrez a{
+        font-size: 10px;
+        line-height: 35px;
+    }
+    .description p {
+        font-size: 15px;
+    }
+    
+    .description h2 {
+        font-size: 22px;
+        margin-top: 5px;
+    }
+    .description h3 {
+        font-size: 18px;
+    }
+    footer{
+        font-size: 25px;
+    }
+}
+
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .navBar li {
+        display: block;
+        width: 70%;
+    }
+    .navigation {
+        font-size: 28px;
+    }
+    .titre h1{
+        font-size: 31px;
+        text-align: center;
+    }
+    #legende{
+        display: none;
+    }
+    #animation{
+        display: none;
+    }
+    .decouvrez{
+        width: 50%;
+        height: 30px;
+        
+    }
+    .decouvrez a{
+        font-size: 10px;
+        line-height: 35px;
+    }
+    .description p {
+        font-size: 17px;
+    }
+    
+    .description h2 {
+        font-size: 24px;
+        margin-top: 5px;
+    }
+    .description h3 {
+        font-size: 20px;
+    }
+    footer{
+        font-size: 28px;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .titre h1{
+        font-size: 41px;
+        text-align: center;
+    }
+
+
+}
+
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .titre h1{
+        font-size: 51px;
+        text-align: center;
+    }
+}
+
+
+@media (min-width: 1200px) {}
