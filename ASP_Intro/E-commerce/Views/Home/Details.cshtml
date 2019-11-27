@@ -1,0 +1,28 @@
+﻿@model E_commerce.Models.Card
+
+<article class="details">
+    <div class="detailsL">
+        <img src="~/Content/img/@(Model.Id).png" class="avatar" />
+        <div class="back">
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+    <div class="detailsR">
+        <h2>@Model.Name</h2>
+        <fieldset>
+            <legend>Description</legend>
+            Mon Dieu, que votre volonté soit fête !
+        </fieldset>
+
+        <div>
+            <ul class="states" style="list-style:none;">
+                <li class="power">@Model.Power</li>
+                <li class="attack">@Model.Attack</li>
+                <li class="armor">@Model.Armor</li>
+            </ul>
+            <a href="#">Buy</a>
+        </div>
+    </div>
+
+</article>
+

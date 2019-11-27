@@ -1,0 +1,12 @@
+﻿@using E_commerce.Models
+
+@helper DisplayRolesComboBox(List<Role> roles, int roleId = 0)//? après int c'est nullable
+{
+    <label>Groupe d'utilisateur</label>
+    <select name="RoleId">
+        @foreach (Role role in roles)
+        {
+            <option value="@role.Id" @(role.Id == roleId && roleId > 0 ? "selected=\"selected\"" : "")>@role.Name</option>
+        }
+    </select>
+}

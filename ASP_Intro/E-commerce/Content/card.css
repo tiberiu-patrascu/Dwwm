@@ -1,0 +1,148 @@
+﻿.mycard {
+    transition: 1s all ease-in-out;
+    display: grid;
+    transform-style: preserve-3d;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "overlap";
+    /*border-radius: 10% 20% / 10% 50%;*/
+    /*border-radius: 10% / 90%;*/
+    margin: 10px;
+    width: 220px;
+    height: 320px;
+}
+
+    .mycard:hover {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+
+.articleMiddleFront {
+    grid-area: overlap;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color: rgba(21, 22, 29, 0.836);
+    text-align: center;
+    margin: 15px;
+}
+    .articleMiddleFront img{
+        margin-top:10px;
+    }
+    .articleMiddleBack {
+        transform: rotateY(180deg);
+        grid-area: overlap;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        text-align: center;
+        background-color: rgb(21, 22, 29);
+        margin: 15px;
+        border-radius: 10px;
+    }
+    .articleMiddleBack p {
+        text-align: justify;
+        padding-top: 20px;
+        padding-left: 30px;
+        line-height: 35px;
+        color: #FDF5C9;
+    }
+.mycard:nth-child(n+1) {
+    background-image: url("img/card1.png");
+
+}
+
+.mycard:nth-child(2n+2) {
+    background-image: url("img/card2.png");
+}
+
+.boutiqueIndex {
+    font-size: 25px;
+    color: #FFDD97;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.btncard li {
+    display: inline-block;
+    position: relative;
+    list-style: none;
+    width: 60px;
+    height: 25px;
+    line-height: 25px;
+    margin-top: 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+    .btncard li a {
+        text-decoration: none;
+        color: #FCFDF7;
+    }
+    .btncard li::before {
+        background: linear-gradient(to right, #df9c0eb7, #e9401fc2);
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        transition: all 0.8s ease;
+        width:0;
+        height: 100%;
+    }
+
+    .btncard li:hover::before {
+        width: 100%;
+    }
+
+    .btncard li:hover ul {
+        display: block;
+    }
+.buy {
+    position: absolute;
+    bottom: 10px;
+    right: 25px;
+    font-size: 25px;
+    color: #A91F2D;
+    opacity: 1;
+    text-decoration: none;
+}
+.cart{
+    opacity:0;
+}
+
+.buy:hover .cart {
+    transition: opacity .5s ease-in-out;
+    opacity: 1;
+}
+.avatar{
+    margin-top:20px;
+
+}
+.states {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.states li{
+    margin:0px 5px;
+    display:inline-block;
+    position:relative;
+    width:50px;
+    height:50px;   
+}
+
+.power{
+    background-image:url("img/power.png");
+    background-size:cover;
+    padding-top:15px;
+}
+.attack {
+    background-image: url("img/atack.png");
+    background-size: cover;
+    padding-top: 15px;
+}
+.armor {
+    background-image: url("img/armor.png");
+    background-size: cover;
+    padding-top: 14px;
+}

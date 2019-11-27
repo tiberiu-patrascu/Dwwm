@@ -1,0 +1,25 @@
+﻿@{ 
+    List<E_commerce.Models.User> users = (List<E_commerce.Models.User>)ViewData["users"];
+
+    foreach ( E_commerce.Models.User item in users)
+    {
+<div class="special">
+    <article>
+        <ul>
+            <li>Username <br />@item.Username</li>
+        </ul>
+    </article>
+    <hr />
+    <div>
+        <ul style=" text-align:center; list-style:none; text-decoration:none; color:white; ">
+            <li>@Html.ActionLink("Details", "Details", new { id = item.Id })</li>
+            <li>@Html.ActionLink("Edit", "Edit", new { id = item.Id })</li>
+            <li>@Html.ActionLink("Delete", "Delete", new { id = item.Id })</li>
+        </ul>
+    </div>
+</div>
+
+    }
+} 
+
+

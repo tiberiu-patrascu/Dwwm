@@ -1,0 +1,52 @@
+﻿@model E_commerce.Models.Card
+
+
+<div style="color:white; text-align:center; margin-top:100px;">
+    <h3>Are you sure you want to delete this?</h3>
+    <hr />
+    <dl class="form-horizontal" style="line-height:20px;">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Power)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Power)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Attack)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Attack)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Armor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Armor)
+        </dd>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <dd class="form-actions no-color" style="color:white;">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </dd>
+        }
+    </dl>
+
+
+</div>

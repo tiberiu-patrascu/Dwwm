@@ -1,0 +1,48 @@
+﻿@model E_commerce.Models.User
+
+@{ 
+    List<E_commerce.Models.Role> roles = ViewBag.Roles;
+}
+
+
+    <form action="" method="post" enctype="multipart/form-data" class="special">
+
+        <h3>Edit</h3>
+        <hr />
+        <input type="hidden" name="Id" value="@Model.Id" />
+
+        <label>Nom de utilisateur</label>
+        <input type="text" name="Username" value="@Model.Username" />
+
+        <label>Or sur le compte</label>
+        <input type="text" name="Golds" value="@Model.Golds" />
+
+        <label>Mot de passe</label>
+        <input type="password" name="Password" value="" />
+        <div>
+            <label>Groupe d'utilisateur</label>
+            <select name="RoleId">
+                @{
+                    foreach (E_commerce.Models.Role item in ViewBag.Roles)
+                    {
+                        @*if (Model.Id == item.Id)
+                        {
+                            <option value="@item.Id" selected="selected">@item.Name</option>
+                        }
+                        else
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }*@
+                        <option value="@item.Id" @(Model.Id == item.Id ? "selected=\"selected\"" : "")>@item.Name</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <input type="submit" value="Save" />
+
+
+        <ul>
+            <li>@Html.ActionLink("Back to List", "Index")</li>
+        </ul>
+    </form>
