@@ -1,0 +1,154 @@
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Magnifilms</title>
+    <link href="css/normalize.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" media="all">
+    <script src="js/picturefill.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="js/jquery.fitvids.js"></script>
+
+    <script>
+        $(document).ready(
+            function () {
+                $(".video").fitVids();
+                ajouter_bt_menu();
+                maj_menu();
+            }
+        )
+
+        $(window).resize(function () {
+            maj_menu();
+        });
+
+        function ajouter_bt_menu() {
+            $("#mainNav ul").before(
+                '<div id="bt_menu"><a href="#" style="text-decoration:none; color:#fff; line-height: 40px;">☰</a></div>'
+            );
+            $("#bt_menu").click(function () {
+                $("#mainNav ul").toggle(500);
+            });
+        }
+
+        function maj_menu() {
+            var largeur = document.body.clientWidth;
+            if (largeur < 580) {
+                $("#bt_menu").show(500);
+                $("#mainNav ul").hide(500);
+
+            } else {
+                $("#bt_menu").hide(500);
+                $("#mainNav").show(500);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header id="mainHeader">
+        <div id="logo"><a href="#"><img src="images/logo.png" alt="magnifilms"></a></div>
+        <hgroup>
+            <h1>Magnifilms</h1>
+            <h2>des films magnifiques</h2>
+        </hgroup>
+    </header>
+
+    <picture id="topImage">
+        <source srcset="images/hollywood_500.jpg" media="(max-width:480px)">
+        <source srcset="images/hollywood_1000.jpg" media="(max-width:989px)">
+        <source srcset="images/hollywood_1280.jpg" media="(min-width:990px)">
+        <img alt="Bandeau" srcset="images/hollywood_500.jpg" width="100%">
+    </picture>
+
+    <nav id="mainNav">
+        <h1>Menu</h1>
+        <ul class="navbar-nav">
+            <li class="active"><a href="#" title="Mes dernières trouvailles">Mes dernières trouvailles</a> </li>
+            <li><a href="#" title="A propos">A propos</a></li>
+            <li><a href="#" title="Contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="content">
+
+        <section id="films">
+
+            <h3>Mes dernières trouvailles</h3>
+            <article>
+                <h2>Garden State</h2>
+                <div class="filmImage"><a href="#"><img src="images/gardenstate_470.jpg" alt="bandeau"></a></div>
+                <div class="description">
+                    <h3 class="date">Mai 2012</h3>
+                    <p>Un homme troublé retourne à la maison pour l'enterrement de sa mère, après avoir été éloigné de
+                        sa famille depuis une dizaine d'années.</p>
+                </div>
+            </article>
+
+            <article>
+                <h2>Iron Man 3</h2>
+                <div class="filmImage"><a href="#"><img src="images/ironman_470.jpg" alt="bandeau"></a></div>
+                <div class="description">
+                    <h3 class="date">Avril 2012</h3>
+                    <p>Le 3e volet du célèbre super héros de chez Marvel. Cette fois, Tony Stark a des insomnies, alors
+                        qu'un certain mandarin commence à être menaçant.</p>
+                </div>
+            </article>
+
+            <article>
+                <h2>Skyfall</h2>
+                <div class="filmImage"><a href="#"><img src="images/skyfall_470.jpg" alt="bandeau"></a></div>
+                <div class="description">
+                    <h3 class="date">Mars 2012</h3>
+                    <p>Dans ce nouveau volet de James Bond, le ténébreux séducteur est contraint de
+                        retourner en Grande Bretagne à cause d'une menace contre le MI6.</p>
+                </div>
+            </article>
+
+        </section>
+
+        <aside id="related">
+
+            <h1>Annexes</h1>
+
+            <article>
+                <h2>Film au hasard</h2>
+                <div class="randomFilmImage"><a href="#"><img src="images/eternal_sunshine_210.jpg" alt="bandeau"></a>
+                </div>
+                <div class="description">
+                    <h3>Sunshine of <br>the Spotless Mind</h3>
+                    <p>Suite à une déception amoureuse, un homme cherche par tous les moyens d'oublier sa femme. Mais
+                        est-ce vraiment ce qu'il souhaite ?</p>
+                </div>
+            </article>
+
+            <section id="social">
+                <h1>Retrouvez-nous sur les réseaux sociaux</h1>
+                <ul>
+                    <li><a href="#"><img src="images/twitter.png" alt="twitter"></a></li>
+                    <li><a href="#"><img src="images/fb.png" alt="facebook"></a></li>
+                </ul>
+            </section>
+
+        </aside>
+
+    </div>
+
+    <div class="video">
+        <div class="fluid-width-video-wrapper" style="padding-top: 56.25%;"><iframe
+                src="https://www.youtube.com/embed/8iu9eKt5yqw?start=1" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""
+                name="fitvid0"></iframe>
+        </div>
+    </div>
+
+    <footer id="pageFooter">
+        <h2>Copyright</h2>
+        <p>Copyright tous droit réservés</p>
+    </footer>
+</body>
+
+</html>
