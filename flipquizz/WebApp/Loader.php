@@ -2,11 +2,12 @@
 
 class Loader
 {
-    public static function autoload($classname)
+    public static function autoload($classname) // Model\Db
     {
         //constante comme une variable la valeur ne se change pas dans le temps
 
         //$classname = nom de notre fichier
+        $classname = str_replace('\\','/',$classname); // models\Db devient models/Db
 
         $path = __DIR__.'/'.$classname.'.php';
 

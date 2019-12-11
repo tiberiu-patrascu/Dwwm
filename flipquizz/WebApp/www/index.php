@@ -33,3 +33,8 @@ require_once '../Loader.php';
 $router = new Router();
 
 d($router);
+
+// \ our acceder le nom de fichier c'est comme models.db
+$db = Models\Db::getInstance();
+
+d($db);
