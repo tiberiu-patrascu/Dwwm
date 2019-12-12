@@ -4,6 +4,9 @@
 //include leve une exception et apres continuer le code
 //si on savais pas on utilise require once
 //../dans le repertoire parent
+
+use Models\Quizzes;
+
 require_once '../Debug.php';
 require_once '../Loader.php';
 
@@ -38,3 +41,15 @@ d($router);
 $db = Models\Db::getInstance();
 
 d($db);
+
+$result = Models\Quizzes::getQuizzes();
+
+d($result);
+
+$result = json_encode($result);
+
+d($result);
+
+$result = Models\Quizzes::getQuiz(1);
+
+d($result);

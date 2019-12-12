@@ -14,7 +14,8 @@ class Db
         //is_null(Db::$instnance) sau Db::$instance !== null
         if(Db::$instance === null){
             // try{
-            //     $requetteDsn = 'mysql:host=localhost;port=3306;dbname=flipquizz;charset=UTF8';
+                //data source name
+            //     $Dsn = 'mysql:host=localhost;port=3306;dbname=flipquizz;charset=UTF8';
 
             //     $option = [
             //         \PDO::ATTR_ERRMODE =>\PDO::ERRMODE_EXCEPTION,
@@ -22,16 +23,19 @@ class Db
             //         \PDO::ATTR_EMULATE_PREPARES=>false
             //     ];
 
-            //     Db::$instance = new \PDO($requetteDsn, 'root','',$option);
+            //     Db::$instance = new \PDO($Dsn, 'root','',$option);
             // }
             // catch(\PDOException $e){
             //     exit ('Erreur SQL'.$e->getMessage());
             // }
 
             Db::$instance = new \PDO('mysql:host=localhost;port=3306;dbname=flipquizz;charset=UTF8','root','',[
+                //definir le niveau de erreur , a chaque fois quand il trouve une erreur il leve ue exception
                 \PDO::ATTR_ERRMODE =>\PDO::ERRMODE_EXCEPTION,
-                \PDO::ATTR_DEFAULT_FETCH_MODE=>\PDO::FETCH_ASSOC,
-                \PDO::ATTR_EMULATE_PREPARES=>false
+                //fassoc envoyer un tableau associativ nom de collone avec les valeur
+                \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
+                //quand on va utilise les requete prepares //une requette avec parametre , securise les dennes requette execute un boucle la requette execute une fois
+                \PDO::ATTR_EMULATE_PREPARES => false
             ]);
 
         }
