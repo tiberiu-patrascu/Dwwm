@@ -6,7 +6,7 @@ namespace Models;
 class Quizzes
 {
     //static plus rapide que object
-    public STATIC FUNCTION getQuizzes(){
+    public static function getQuizzes(){
         $sql = "SELECT * FROM quizz;";
 
         $pdo = Db::getInstance();
@@ -41,4 +41,28 @@ class Quizzes
         return $result;
     }
     
+    public static function insertQuiz(array $quiz){
+        $sql = "INSERT INTO quizz (quizz_theme, quizz_textcolor, quizz_backcolor)
+        VALUES(:quizz_theme, :quizz_textcolor, :quizz_backcolor);";
+
+        $stmt = Db::getInstance()->prepare($sql);
+
+        $vars = [
+            ':quizz_theme' => $quiz['quizz_theme'],
+            ':quizz_textcolor' => $quiz['quizz_textcolor'],
+            ':quizz_backcolor' => $quiz['quizz_backcolor']
+        ];
+
+        $stmt->execute($vars);
+
+        $result = $stmt->fetch();
+
+        $stmt->closeCursor();
+
+        return $result; 
+    }
+
+    public static function updateQuiz(array $quiz){
+
+    }
 }
