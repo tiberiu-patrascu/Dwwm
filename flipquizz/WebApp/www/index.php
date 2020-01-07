@@ -5,6 +5,7 @@
 //si on savais pas on utilise require once
 //../dans le repertoire parent
 
+use Models\Model;
 use Models\Quizzes;
 
 require_once '../Debug.php';
@@ -33,23 +34,58 @@ require_once '../Loader.php';
 //     echo 'Pas de variable dans l\'url';
 // }
 
-$router = new Router();
+// $router = new Router();
 
-d($router);
+// d($router);
 
-// \ our acceder le nom de fichier c'est comme models.db
-$db = Models\Db::getInstance();
+// // \ our acceder le nom de fichier c'est comme models.db
+// $db = Models\Db::getInstance();
 
-d($db);
+// d($db);
 
-$result = Models\Quizzes::getQuizzes();
+// $result = Models\Quizzes::getQuizzes();
 
+// d($result);
+
+// $result = json_encode($result);
+
+// d($result);
+
+// $result = Models\Quizzes::getQuiz(1);
+
+// d($result);
+
+// $result = Models\Questions::getQuestion(1);
+
+// d($result);
+
+// $result = Models\Categories::getCategory(1);
+
+// d($result);
+
+$quizzes = new Models\Quizzes();
+
+d($quizzes);
+
+$result = $quizzes->get(1);
 d($result);
 
-$result = json_encode($result);
-
+$result = $quizzes->getAll();
 d($result);
 
-$result = Models\Quizzes::getQuiz(1);
+$question = new Models\Questions();
+d($question);
 
+$result = $question->get(1);
+d($result);
+
+$result = $question->getAll();
+d($result);
+
+$categorie = new Models\Categories();
+
+$result = $categorie->get(1);
+d($result);
+
+$result = $categorie->getAll();
 d($result);
