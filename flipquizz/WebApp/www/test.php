@@ -63,29 +63,34 @@ require_once '../Loader.php';
 
 // d($result);
 
-$quizzes = new Models\Quizzes();
+// $quizzes = new Models\Quizzes();
 
-d($quizzes);
+// d($quizzes);
 
-$result = $quizzes->get(1);
-d($result);
+// $result = $quizzes->get(1);
+// d($result);
 
-$result = $quizzes->getAll();
-d($result);
+// $result = $quizzes->getAll();
+// d($result);
+
+
+// $categorie = new Models\Categories();
+
+// $result = $categorie->get(1);
+// d($result);
+
+// $result = $categorie->getAll();
+// d($result);
+
+// $result= $categorie->getQuizCategories(1);
+// d($result);
 
 $question = new Models\Questions();
-d($question);
-
-$result = $question->get(1);
+$result =$question->getCategoryQuestions(1);
 d($result);
 
-$result = $question->getAll();
-d($result);
+// $result = $question->get(1);
+// d($result);
 
-$categorie = new Models\Categories();
-
-$result = $categorie->get(1);
-d($result);
-
-$result = $categorie->getAll();
-d($result);
+// $result = $question->getAll();
+// d($result);

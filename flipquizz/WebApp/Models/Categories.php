@@ -43,6 +43,38 @@ class Categories extends Model
         parent::__construct('fp_categories','category_id');
     }
 
+    public function getQuizCategories(int $_quiz_id)
+    {
+        try {           
+            $sql = "SELECT * FROM ".$this->tableName." WHERE quiz_id=:quiz_id;";
+
+            //:n'est pas obligatoire
+            $vars= [
+                ':quiz_id' => $_quiz_id
+            ];
+
+            //requette prepare n'est pas modifiable
+            $stmt = Db::getInstance()->prepare($sql);
+
+            $result = [];
+
+            $success= $stmt->execute($vars);
+            
+            if($success)
+            {
+                $result = $stmt->fetchAll();
+            }
+
+            $stmt->closeCursor();
+
+            return $result;
+
+        } catch (\Exception $ex) {
+            exit($ex->getMessage());
+        }
+    }
+
+
     public static function insertQuestions(array $category){
         $sql = "INSERT INTO fp_categories (category_name, category_description)
         VALUES(:category_name, :category_description);";
