@@ -52,5 +52,8 @@ else{
 
 $result = json_encode($result, JSON_PRETTY_PRINT);
 
+//mettre le server en pause
+//sleep(5);
+
 //spit out 
 exit($result);

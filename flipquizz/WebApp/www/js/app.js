@@ -17,10 +17,21 @@ window.addEventListener('DOMContentLoaded',function (){
             //function de reapel
             //new db
             //select quiz
+
         },
         methods: {
+            getQuizzes: function (_db) {
+                this.quizzes = _db.quizzes;
+                console.log('App loading Quizzes');
+            },
             addTeam: function() {
                 this.game.addTeam();
+                console.log(this.game.teams.length);
+
+                if (this.quizzes.length < 1) {
+                    var db = new Db();
+                    db.loadQuizzes(this.getQuizzes);
+                }
             },
             deleteTeam: function() {
                 this.game.deleteTeam();
@@ -28,14 +39,11 @@ window.addEventListener('DOMContentLoaded',function (){
         },
     });
 
-
     // document.querySelector("#btn").addEventListener("click", function(){
     //     app.year = parseInt(app.year);
     //     app.year += 1;
     //     //app.authors.push('The boss');
     //     app.isActive= !app.isActive;
     // });
-
-    
 
 });

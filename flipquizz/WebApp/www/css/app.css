@@ -18,20 +18,24 @@ body{
 .team[data-id="1"] {
     border-color: #ff0088;
     background-color:#ff008825 ;
+    border-radius: 10% / 50%;
 }
 
 
 .team[data-id="2"] {
     border-color: #00ffcc;
     background-color: #00ffcc1e;
+    border-radius: 10% / 50%;
 }
 
 .team[data-id="3"] {
     border-color: #fa8072;
     background-color: #fa80721e;
+    border-radius: 10% / 50%;
 }
 
 .team[data-id="4"] {
     border-color: #4b0082;
     background-color: #4c00821c;
+    border-radius: 10% / 50%;
 }
