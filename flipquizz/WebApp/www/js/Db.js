@@ -54,4 +54,33 @@ class Db {
         ajx.send();
 
     }
+
+    loadCategories(_id, _callback) {
+        var db = this;
+
+        var ajx = new XMLHttpRequest();
+
+        ajx.open('GET', './api.php?t=categories&id='+_id,true);
+
+        ajx.onload= function() {
+            if (this.status === 200) {
+                var jsonResonse = JSON.parse(this.responseText);
+                db.categories = jsonResonse;
+                _callback(db);
+                console.log(jsonResonse);
+
+            } else {
+                alert('Erreur loading Categories');
+            }
+        }
+        
+        ajx.send();
+
+    }
+
+    loadQuestions() {
+
+    }
+
 }
+

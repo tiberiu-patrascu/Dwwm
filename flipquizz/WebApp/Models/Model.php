@@ -68,7 +68,7 @@ abstract class Model
 
             if ($stmt->execute($vars)) {
                 
-                $result = $stmt->fetch();
+                $result = $stmt->fetchAll();
             }
 
             $stmt->closeCursor(); // ferme le courseur de la requête /!\ obligatoir pour debloquer la base de donnée

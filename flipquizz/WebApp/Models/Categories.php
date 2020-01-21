@@ -40,7 +40,7 @@ class Categories extends Model
     
     public function __construct()
     {
-        parent::__construct('fp_categories','category_id');
+        parent::__construct('fp_categories','quiz_id');
     }
 
     public function getQuizCategories(int $_quiz_id)

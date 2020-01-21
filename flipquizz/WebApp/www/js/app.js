@@ -1,19 +1,19 @@
 //le code s'executera quand la page est entierement charger
-window.addEventListener('DOMContentLoaded',function (){
-    
+window.addEventListener('DOMContentLoaded', function () {
+
     app = new Vue({
         //element lie au id vue
-        el:'#vue',
-        data:{
-            quizzes : [],
-            game : new Game(),
+        el: '#vue',
+        data: {
+            quizzes: [],
+            game: new Game(),
             // pageTitle: 'Salutée',
             // renderBody: 'Contenu de la page',
             // year: 2020,
             // authors: ['Julien', 'Adrien', 'Tib', 'François', 'Balkany', 'Mickaël'],
             // isActive: false
         },
-        mounted: function() {
+        mounted: function () {
             //function de reapel
             //new db
             //select quiz
@@ -24,17 +24,26 @@ window.addEventListener('DOMContentLoaded',function (){
                 this.quizzes = _db.quizzes;
                 console.log('App loading Quizzes');
             },
-            addTeam: function() {
-                this.game.addTeam();
-                console.log(this.game.teams.length);
-
-                if (this.quizzes.length < 1) {
-                    var db = new Db();
-                    db.loadQuizzes(this.getQuizzes);
+            addTeam: function () {
+                if (this.game.teams.length < 4) {
+                    this.game.addTeam();
+                    if (this.quizzes.length < 1) {
+                        var db = new Db();
+                        db.loadQuizzes(this.getQuizzes);
+                    }
                 }
+
             },
-            deleteTeam: function() {
+            deleteTeam: function () {
                 this.game.deleteTeam();
+            },
+            loadCategories: function (_event) {
+                var db = new Db();
+                db.loadCategories(_event.target.dataset.id, this.getCategories);
+                console.log(_event.target.dataset.id);
+            },
+            getCategories: function () {
+
             }
         },
     });

@@ -17,45 +17,56 @@
 <body>
     <div id="vue">
         <header>
-            <!-- <h1>{{ pageTitle }}</h1> -->
+            <h1>Welcome</h1>
         </header>
-        <main>
-            <div>
-                <button v-if="game.teams.length > 0" v-on:click="deleteTeam()">-</button>
-                <button v-if="game.teams.length < 4 "v-on:click="addTeam()">+</button>
-            </div>
-            <div class="team-container">
-                <article class="team" :data-id="team.id" v-for="team in game.teams">
-                    {{ team.name }} <br>
-                    {{ team.score }}
+        <main class="main">
+            <div class="addTeam">
+                <h2>Number of teams</h2>
+                <article class="btn">
+                    <button class="btnMinus" v-if="game.teams.length > 0" v-on:click="deleteTeam()">-</button>   
+                    <button class="btnPlus" v-on:click="addTeam()">+</button>
+                    
+                </article>
+               
+                <article class="team"  v-for="team in game.teams">
+                    <label for="">{{ team.name }}</label> 
+                    <input v-model="team.name">           
                 </article>
             </div>
 
-            <div>
+            <div class="questions">
                 <p v-for="quiz in quizzes">
-                    {{ quiz.quiz_theme }}
+                    <input type="radio" name="the_quiz" :id="quiz.quiz_id" :data-id="quiz.quiz_id"
+                        v-on:change="loadCategories">
+                    <label for="">{{ quiz.quiz_theme }}</label>
                 </p>
+                <div style="border: 1px solid #fff; height: 80%; font-size: 30px;">
+ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, illo! Blanditiis reiciendis assumenda esse ullam voluptates repellendus atque vero, temporibus magnam, laborum pariatur cupiditate expedita ut, repudiandae iure minus voluptas.
+                </div>
             </div>
 
-            <!-- <hr>
-            {{ renderBody }}
-            <button id="btn">CLICK ME /!\</button>
-            <br>
-            <input v-model="pageTitle">
-            <input v-model="year"> -->
         </main>
-        <footer>
-            <p>&copy; Copyright ARFP </p>
-            <!-- <p>Crédits</p>
-            <div v-for="author in authors">
-                <p>{{ author }}</p>
-            </div>
-            <div v-if="isActive">Ceci est affiché!</div>
-            <div v-if="year >= 2025">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nisi consequatur esse
-                ex qui nobis repellat laboriosam, mollitia animi accusantium tempora enim, natus ratione nam perferendis
-                unde iste. Officia, enim.</div> -->
+        <footer class="team-container">
+            <article class="team" :data-id="team.id" v-for="team in game.teams">
+                <label for="">{{ team.name }}</label>
+                <label for="">Score : {{ team.score }}</label>           
+            </article>
         </footer>
     </div>
+
 </body>
 
 </html>
+
+<!-- <p>Crédits</p>
+<div v-for="author in authors">
+    <p>{{ author }}</p>
+</div>
+<div v-if="isActive">Ceci est affiché!</div>
+<div v-if="year >= 2025">Lorem</div> -->
+<!-- <hr>
+{{ renderBody }}
+<button id="btn">CLICK ME /!\</button>
+<br>
+<input v-model="pageTitle">
+<input v-model="year"> -->
