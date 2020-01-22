@@ -6,6 +6,8 @@ window.addEventListener('DOMContentLoaded', function () {
         el: '#vue',
         data: {
             quizzes: [],
+            categories: [],
+            questions: [],
             game: new Game(),
             // pageTitle: 'Salutée',
             // renderBody: 'Contenu de la page',
@@ -42,8 +44,17 @@ window.addEventListener('DOMContentLoaded', function () {
                 db.loadCategories(_event.target.dataset.id, this.getCategories);
                 console.log(_event.target.dataset.id);
             },
-            getCategories: function () {
-
+            getCategories: function (_db) {
+                this.categories = _db.categories;
+            },
+            loadQuestions: function(_event){
+                var db = new Db();
+                db.loadQuestions(_event.target.dataset.id, this.getQuestions);
+                console.log(_event.target.dataset.id);
+            },
+            getQuestions: function(_db) {
+                this.questions = _db.questions;
+                console.log(this.questions);
             }
         },
     });

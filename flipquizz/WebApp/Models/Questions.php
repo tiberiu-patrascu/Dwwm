@@ -40,7 +40,7 @@ class Questions extends Model
     
     public function __construct()
     {
-        parent::__construct('fp_questions','question_id');
+        parent::__construct('fp_questions','category_id');
     }
 
     public function getCategoryQuestions(int $_cat_id)

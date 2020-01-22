@@ -21,6 +21,7 @@ class Db {
 
     constructor() {
         this.quizzes = [];
+        this.categories = [];
     }
 
     //_callback function de reappel
@@ -39,6 +40,7 @@ class Db {
         ajx.onload = function() {
             //200 requete exequte
             if (this.status === 200) {
+                console.log(this.responseText);
                 var jsonReponse = JSON.parse(this.responseText);
                 dbself.quizzes = jsonReponse;
                 
@@ -67,7 +69,7 @@ class Db {
                 var jsonResonse = JSON.parse(this.responseText);
                 db.categories = jsonResonse;
                 _callback(db);
-                console.log(jsonResonse);
+                console.log("DB Category loaded !");
 
             } else {
                 alert('Erreur loading Categories');
@@ -78,8 +80,25 @@ class Db {
 
     }
 
-    loadQuestions() {
+    loadQuestions(_id, _callback) {
+        var db = this;
 
+        var ajx = new XMLHttpRequest();
+
+        ajx.open('GET', './api.php?t=questions&id='+_id, true);
+
+        ajx.onload= function() {
+            if (this.status === 200) {
+                var jsonReponse = JSON.parse(this.responseText);
+                db.questions = jsonReponse;
+                _callback(db);
+                console.log("DB Questions loaded !");
+            } else {
+                alert('Erreur loaging questions');
+            }
+        }
+
+        ajx.send();
     }
 
 }

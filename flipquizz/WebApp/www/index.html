@@ -9,6 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/Db.js"></script>
     <script src="js/Quiz.js"></script>
+    <script src="js/Category.js"></script>
+    <script src="js/Question.js"></script>
     <script src="js/Team.js"></script>
     <script src="js/Game.js"></script>
     <script src="js/app.js"></script>
@@ -17,15 +19,16 @@
 <body>
     <div id="vue">
         <header>
-            <h1>Welcome</h1>
+            <h1>Welcome to the candy shop !</h1>
         </header>
         <main class="main">
-            <div class="addTeam">
-                <h2>Number of teams</h2>
+
+
+            <div class="addTeam">           
                 <article class="btn">
-                    <button class="btnMinus" v-if="game.teams.length > 0" v-on:click="deleteTeam()">-</button>   
+                  <h2>Number of teams</h2>  
                     <button class="btnPlus" v-on:click="addTeam()">+</button>
-                    
+                    <button class="btnMinus" v-if="game.teams.length > 0" v-on:click="deleteTeam()">-</button>       
                 </article>
                
                 <article class="team"  v-for="team in game.teams">
@@ -34,19 +37,28 @@
                 </article>
             </div>
 
-            <div class="questions">
-                <p v-for="quiz in quizzes">
+
+            <div class="quizzes" v-if="game.teams.length > 0">
+                <article v-for="quiz in quizzes" class="quizTheme">
                     <input type="radio" name="the_quiz" :id="quiz.quiz_id" :data-id="quiz.quiz_id"
                         v-on:change="loadCategories">
                     <label for="">{{ quiz.quiz_theme }}</label>
-                </p>
-                <div style="border: 1px solid #fff; height: 80%; font-size: 30px;">
- Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, illo! Blanditiis reiciendis assumenda esse ullam voluptates repellendus atque vero, temporibus magnam, laborum pariatur cupiditate expedita ut, repudiandae iure minus voluptas.
-                </div>
+                </article>
+                <article class="categories" v-for="category in categories">
+                    <input type="radio" name="the_category" :id="category.category_id" :data-id="category.category_id" v-on:change="loadQuestions" >
+                    <label for="">{{ category.category_name }}</label>
+                </article>
+
+                <!-- <article class="questions" v-for="question in questions">
+                    <label for="">{{ question.question_content }}</label>
+                </article> -->
+                <article class="start">
+                    <input type="button" value="Start the game">
+                </article>
             </div>
 
         </main>
-        <footer class="team-container">
+        <footer class="team-container" v-if="game.teams.length > 0">
             <article class="team" :data-id="team.id" v-for="team in game.teams">
                 <label for="">{{ team.name }}</label>
                 <label for="">Score : {{ team.score }}</label>           

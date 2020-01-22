@@ -29,7 +29,7 @@ class Db
             //     exit ('Erreur SQL'.$e->getMessage());
             // }
 
-            Db::$instance = new \PDO('mysql:host=localhost;port=3306;dbname=flipquiz;charset=UTF8','tib-user','azer',[
+            Db::$instance = new \PDO('mysql:host=localhost;port=3306;dbname=flipquiz;charset=UTF8','crmtest','azerty',[
                 //definir le niveau de erreur , a chaque fois quand il trouve une erreur il leve ue exception
                 \PDO::ATTR_ERRMODE =>\PDO::ERRMODE_EXCEPTION,
                 //fassoc envoyer un tableau associativ nom de collone avec les valeur
