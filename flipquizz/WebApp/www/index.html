@@ -24,16 +24,16 @@
         <main class="main">
 
 
-            <div class="addTeam">           
+            <div class="addTeam">
                 <article class="btn">
-                  <h2>Number of teams</h2>  
+                    <h2>Number of teams</h2>
                     <button class="btnPlus" v-on:click="addTeam()">+</button>
-                    <button class="btnMinus" v-if="game.teams.length > 0" v-on:click="deleteTeam()">-</button>       
+                    <button class="btnMinus" v-if="game.teams.length > 0" v-on:click="deleteTeam()">-</button>
                 </article>
-               
-                <article class="team"  v-for="team in game.teams">
-                    <label for="">{{ team.name }}</label> 
-                    <input v-model="team.name">           
+
+                <article class="team" v-for="team in game.teams">
+                    <label for="">{{ team.name }}</label>
+                    <input v-model="team.name">
                 </article>
             </div>
 
@@ -45,7 +45,7 @@
                     <label for="">{{ quiz.quiz_theme }}</label>
                 </article>
                 <article class="categories" v-for="category in categories">
-                    <input type="radio" name="the_category" :id="category.category_id" :data-id="category.category_id" v-on:change="loadQuestions" >
+                    <!-- <input type="radio" name="the_category" :id="category.category_id" :data-id="category.category_id" v-on:change="loadQuestions" > -->
                     <label for="">{{ category.category_name }}</label>
                 </article>
 
@@ -53,7 +53,14 @@
                     <label for="">{{ question.question_content }}</label>
                 </article> -->
                 <article class="start">
-                    <input type="button" value="Start the game">
+                    <!-- <input type="button" value="Start the game"> -->
+                    <a href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Start
+                    </a>
                 </article>
             </div>
 
@@ -61,7 +68,7 @@
         <footer class="team-container" v-if="game.teams.length > 0">
             <article class="team" :data-id="team.id" v-for="team in game.teams">
                 <label for="">{{ team.name }}</label>
-                <label for="">Score : {{ team.score }}</label>           
+                <label for="">Score : {{ team.score }}</label>
             </article>
         </footer>
     </div>
