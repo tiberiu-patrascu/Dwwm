@@ -2,7 +2,8 @@ class Game
 {
     constructor() {
         this.teams =[];
-        this.quiz = new Quiz();    
+        this.quiz = new Quiz();
+        this.started = false;
     }
 
     addTeam() {

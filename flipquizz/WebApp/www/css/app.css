@@ -1,25 +1,26 @@
-@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Nanum+Brush+Script&display=swap');
+
+
 body {
     text-align: center;
     background-image: url("../img/uk2.jpg");
     background-size: cover;
-    font-family: 'Fredericka the Great', cursive;
+    /*font-family: 'Fredericka the Great', cursive;*/
     /* font-family: 'Nanum Brush Script', cursive; */
-
 }
 
 header h1 {
     font-size: 60px;
     color: white;
     background-color: #00000062;
+    margin: 0;
 }
 
 #vue {
     width: 90vw;
-    height: 95vh;
+    height: 85%;
     background-color: #f0f8ff36;
     margin: auto;
+    margin-top: 50px;
     padding: 0;
     -webkit-box-shadow: 0px 0px 14px 2px rgba(255, 255, 255, 1);
     -moz-box-shadow: 0px 0px 14px 2px rgba(255, 255, 255, 1);
@@ -27,29 +28,19 @@ header h1 {
 }
 
 .main {
-    height: 70vh;
+    height: 60vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
-
 }
 
-.addTeam {
+.team-container {
     flex: 1;
     text-align: center;
-    margin: 20px;
+    margin: 30px;
     background-color: #00000062;
     font-weight: bold;
 }
-
-.team {
-    padding: 1em;
-    margin: auto;
-    width: 250px;
-    font-size: 1.4em;
-    background-color: #f0f8ff3b;
-}
-
 .btn {
     display: flex;
     flex-direction: column;
@@ -59,10 +50,19 @@ header h1 {
     padding: 0;
     font-size: 20px;
 }
+.team {
+    padding: 10px;
+    margin: auto;
+    width: 250px;
+    font-size: 1.4em;
+    background-color: #f0f8ff3b;
+}
 
 h2 {
     font-weight: bold;
     color: aliceblue;
+    margin: 0;
+    
 }
 
 .btnPlus {
@@ -75,10 +75,11 @@ h2 {
     margin: 15px auto;
 }
 
-.quizzes {
+.quiz-container {
     flex: 1;
-    margin: 20px;
+    margin: 30px;
     background-color: #00000062;
+    position: relative;
 }
 
 .quizTheme {
@@ -96,7 +97,7 @@ h2 {
     height: 25px;
 }
 
-.categories {
+.category-container {
     display: inline-block;
     font-size: 25px;
     color: white;
@@ -105,33 +106,30 @@ h2 {
     width: 150px;
 }
 
-.categories input {
-    width: 25px;
-    height: 25px;
+
+.start {
+    margin: 5px;
 }
-.start{
-    margin-top: 20%;
+
+.start input {
+    padding: 20px;
+    font-size: 30px;
 }
-.start a{
-    background: #0c002b;
-}
-.start input{
-    padding: 30px;
-    font-size: 20px;
-}
-.questions{
+
+/* .questions {
     color: white;
     font-size: 20px;
     padding: 20px;
-}
-.team-container {
+} */
+
+.footer {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: stretch;
     justify-content: center;
     background-color: #00000099;
-    margin: 0px;
+    margin-top: 50px;
     padding: 15px;
 }
 
@@ -168,100 +166,109 @@ h2 {
     color: #fff;
 }
 
-a{
-    transform: translate(-50%,50%);
-    color:#1670f0;
-    padding: 30px 60px;
-    font-size: 30px;
-    letter-spacing: 2px;
-    text-decoration: none;
-    box-shadow: 0 20px 50px rgba(0, 0, 0,.5);
-    position: absolute;
-    overflow: hidden;
-}
-a::before{
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    bottom: 2px;
-    width: 50%;
-    background: rgba(255, 255, 255, 0.05);
+
+/*center*/
+
+.right {
+    display: none;
+    justify-content: center;
+    text-align: center;
+    background-color: #00000062;
+    margin-top: 50px;
 }
 
-a span:nth-child(1){
+h3 {
+    margin: 0px;
+    font-size: 55px;
+}
+
+.score {
+    background-color: #f0f8ff36;
+    cursor: pointer;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: white;
+    margin: 15px;
+    padding: 10px 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.theme {
+    background-color: #00000062;
+}
+
+.theme h2 {
+    color: #000;
+    padding: 10px;
+}
+
+#modalPrincipal,
+#modalSecondary {
     position: absolute;
-    top: 0;
-    left: 0;
+    display: none;
     width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, #0c002b,#1779ff);
-    animation: animate1 2s linear infinite;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.932);
+    color: white;
+    left: 0;
+    top: 0;
+    text-align: center;
 }
-@keyframes animate1{
-    0%
-    {
-        transform: translateX(-100%);
-    }
-    100%
-    {
-        transform: translateX(100%);
-    }
+
+#modalPrincipal h2,
+#modalSecondary h2 {
+    font-size: 150px;
+    margin-top: 10%;
 }
-a span:nth-child(2){
+
+.close,
+.closeTotal {
     position: absolute;
     top: 0;
     right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to bottom, #0c002b,#1779ff);
-    animation: animate2 2s linear infinite;
+    background: 0;
+    border: 0;
+    background-image: url("../img/close3.png");
+    background-size: 100% 100%;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
 }
-@keyframes animate2{
-    0%
-    {
-        transform: translateY(-100%);
-    }
-    100%
-    {
-        transform: translateY(100%);
-    }
-}
-a span:nth-child(3){
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to left, #0c002b,#1779ff);
-    animation: animate3 2s linear infinite;
-}
-@keyframes animate3{
-    0%
-    {
-        transform: translateX(100%);
-    }
-    100%
-    {
-        transform: translateX(-100%);
-    }
-}
-a span:nth-child(4){
+.back{
     position: absolute;
     top: 0;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to top, #0c002b,#1779ff);
-    animation: animate4 2s linear infinite;
+    right: 80px;
+    background: 0;
+    border: 0;
+    background-image: url("../img/back2.png");
+    background-size: 100% 100%;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
 }
-@keyframes animate4{
-    0%
-    {
-        transform: translateY(100%);
-    }
-    100%
-    {
-        transform: translateY(-100%);
-    }
+.btnReponse,
+.btnValidate {
+    padding: 20px;
+    font-size: 25px;
+    margin-top: 10%;
+}
+
+.right h2 {
+    color: white;
+    text-align: center;
+    font-size: 25px;
+}
+
+.reload{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: 0;
+    border: 0;
+    background-image: url("../img/reload.png");
+    background-size: 100% 100%;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
 }

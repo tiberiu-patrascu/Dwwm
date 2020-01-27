@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', function () {
         el: '#vue',
         data: {
             quizzes: [],
-            categories: [],
+            //categories: [],
             questions: [],
             game: new Game(),
             // pageTitle: 'Salutée',
@@ -40,12 +40,42 @@ window.addEventListener('DOMContentLoaded', function () {
                 this.game.deleteTeam();
             },
             loadCategories: function (_event) {
+                // for(var myQuiz of this.quizzes){
+                //     if (myQuiz.quiz_id == event.target.dataset.id) {
+                //         //aliment le quiz 
+                //         this.game.quiz.hydrate(myQuiz);
+
+                //         break;
+                //     }
+                // }
+
+                //first or default c#
+                //la meme chose que avant avec les predicats
+                var quiz = this.quizzes.find(item => item.quiz_id == event.target.dataset.id);
+                //
+                this.game.quiz.hydrate(quiz);
+
                 var db = new Db();
                 db.loadCategories(_event.target.dataset.id, this.getCategories);
+
+                //target obj qui a declancher levent
                 console.log(_event.target.dataset.id);
             },
             getCategories: function (_db) {
-                this.categories = _db.categories;
+                //this.categories = _db.categories;
+                //
+                //this.game.quiz.categories =_db.categories;
+               /* for (var cat of _db.categories) {
+                    var newCategories = new Category();
+
+                    newCategories.hydrate(cat);
+
+                    this.game.quiz.categories.push(newCategories);
+                }*/
+
+                this.game.quiz.categories = _db.categories.map(item => new Category().hydrate(item));
+
+                console.log("App Categories loaded");
             },
             loadQuestions: function(_event){
                 var db = new Db();
@@ -54,7 +84,7 @@ window.addEventListener('DOMContentLoaded', function () {
             },
             getQuestions: function(_db) {
                 this.questions = _db.questions;
-                console.log(this.questions);
+                console.log("App Questions loaded");
             }
         },
     });
@@ -65,5 +95,55 @@ window.addEventListener('DOMContentLoaded', function () {
     //     //app.authors.push('The boss');
     //     app.isActive= !app.isActive;
     // });
+
+
+
+    /**center */
+
+    var btnScore = document.querySelector(".score");
+    var btnReponse = document.querySelector(".btnReponse");
+    var btnClose = document.querySelector(".close");
+    var btnCloseTotal = document.querySelector(".closeTotal");
+    var modalPrincipal = document.querySelector("#modalPrincipal");
+    var modalSecondary = document.querySelector("#modalSecondary");
+
+
+    btnScore.addEventListener("click", function() {
+        modalPrincipal.style = 'display:block;';
+    });
+  
+    btnClose.addEventListener("click", function() {
+        modalPrincipal.style = 'display:none;';
+    });
+
+    btnReponse.addEventListener("click", function(){
+        modalSecondary.style='display:block;';
+    });
+
+    btnCloseTotal.addEventListener("click", function () {
+        modalSecondary.style='display:none;';
+        modalPrincipal.style = 'display:none;';
+    });
+
+
+
+    var btnStart = document.querySelector("#btnStart");
+    var mainContent = document.querySelector(".main");
+    var centerQuiz = document.querySelector(".right");
+    var titre = document.querySelector('.titre');
+
+
+    btnStart.addEventListener("click", function() {
+        mainContent.style = 'display:none;';
+        centerQuiz.style =  'display:flex';
+
+        btnStart.style= 'display:none';
+    });
+
+    btnBack = document.querySelector(".back");
+
+    btnBack.addEventListener("click", function() {
+        document.querySelector("#modalSecondary").style="display:none;";
+    });
 
 });

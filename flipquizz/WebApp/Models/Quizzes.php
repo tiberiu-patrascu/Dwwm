@@ -20,28 +20,28 @@ class Quizzes extends Model
 
     // }
 
-    // public static function getQuiz($id)
-    // {
-    //     //:id = marker 
-    //     $sql = "SELECT * FROM fp_quizzes WHERE quiz_id=:id;";
-    //     //preparer requette en attants requette en cash
-    //     $stmt = Db::getInstance()->prepare($sql);
+    public static function getQuiz($id)
+    {
+        //:id = marker 
+        $sql = "SELECT * FROM fp_quizzes WHERE quiz_id=:id;";
+        //preparer requette en attants requette en cash
+        $stmt = Db::getInstance()->prepare($sql);
 
-    //     $vars = [
-    //         ':id' => $id
-    //     ];
+        $vars = [
+            ':id' => $id
+        ];
 
-    //     $stmt->execute($vars);
+        $stmt->execute($vars);
 
-    //     //rec de resultat
-    //     $result = $stmt->fetch();
+        //rec de resultat
+        $result = $stmt->fetch();
 
-    //     //fermer les courseur de la requette !! obligatoire
+        //fermer les courseur de la requette !! obligatoire
 
-    //     $stmt->closeCursor();
+        $stmt->closeCursor();
 
-    //     return $result;
-    // }
+        return $result;
+    }
     
     public function __construct()
     {

@@ -58,6 +58,7 @@ class Db {
     }
 
     loadCategories(_id, _callback) {
+        //callback = function de reapel
         var db = this;
 
         var ajx = new XMLHttpRequest();
@@ -65,9 +66,12 @@ class Db {
         ajx.open('GET', './api.php?t=categories&id='+_id,true);
 
         ajx.onload= function() {
+            //this fait partie de XMLHttpRequest
             if (this.status === 200) {
                 var jsonResonse = JSON.parse(this.responseText);
+                //il faut declarer dans le constructeur en haut this.categories=[];
                 db.categories = jsonResonse;
+                //retour pour le front end 
                 _callback(db);
                 console.log("DB Category loaded !");
 
