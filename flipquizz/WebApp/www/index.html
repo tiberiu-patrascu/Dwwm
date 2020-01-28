@@ -25,7 +25,7 @@
             <h1 class="titre">{{ game.quiz.quiz_theme }}</h1>
         </header>
 
-        <main class="main">
+        <main class="main" v-if="!game.started">
 
             <div class="team-container">
 
@@ -63,12 +63,13 @@
 
         </main>
 
-        <article class="start">
-            <input type="button" id="btnStart" value="Start the quiz">
+        <article class="start" v-if="!game.started" >
+            <input type="button" id="btnStart" value="Start the quiz" :disabled="game.quiz.categories.length > 0 ? false : true ">
+            <!-- v-on:click='gameStarted' -->
         </article>
 
-        <section class="right">
-
+        <section class="right" >
+            <input type="button" class="back_main">
             <article>
                 <header class="theme">
                     <h2>Theme</h2>

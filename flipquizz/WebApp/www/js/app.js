@@ -14,6 +14,7 @@ window.addEventListener('DOMContentLoaded', function () {
             // year: 2020,
             // authors: ['Julien', 'Adrien', 'Tib', 'François', 'Balkany', 'Mickaël'],
             // isActive: false
+            disabled: false,
         },
         mounted: function () {
             //function de reapel
@@ -85,7 +86,10 @@ window.addEventListener('DOMContentLoaded', function () {
             getQuestions: function(_db) {
                 this.questions = _db.questions;
                 console.log("App Questions loaded");
-            }
+            },
+            gameStarted: function() {
+                this.game.started= true;
+            },
         },
     });
 
@@ -126,17 +130,14 @@ window.addEventListener('DOMContentLoaded', function () {
     });
 
 
-
-    var btnStart = document.querySelector("#btnStart");
     var mainContent = document.querySelector(".main");
     var centerQuiz = document.querySelector(".right");
     var titre = document.querySelector('.titre');
 
-
+    var btnStart = document.querySelector("#btnStart");
     btnStart.addEventListener("click", function() {
         mainContent.style = 'display:none;';
         centerQuiz.style =  'display:flex';
-
         btnStart.style= 'display:none';
     });
 
