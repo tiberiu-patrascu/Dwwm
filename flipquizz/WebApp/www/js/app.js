@@ -14,7 +14,8 @@ window.addEventListener('DOMContentLoaded', function () {
             // year: 2020,
             // authors: ['Julien', 'Adrien', 'Tib', 'François', 'Balkany', 'Mickaël'],
             // isActive: false
-            disabled: false,
+            disabled:false,
+            disabled_conf: false,
         },
         mounted: function () {
             //function de reapel
@@ -27,6 +28,14 @@ window.addEventListener('DOMContentLoaded', function () {
                 this.quizzes = _db.quizzes;
                 console.log('App loading Quizzes');
             },
+            clickConf: function () {
+                var db = new Db();
+                db.loadQuizzes(this.getQuizzes);
+                this.disabled_conf=true;
+            },
+            clickAddTeams: function (){
+                this.disabled= true;
+            },
             addTeam: function () {
                 if (this.game.teams.length < 4) {
                     this.game.addTeam();
@@ -35,7 +44,6 @@ window.addEventListener('DOMContentLoaded', function () {
                         db.loadQuizzes(this.getQuizzes);
                     }
                 }
-
             },
             deleteTeam: function () {
                 this.game.deleteTeam();
@@ -66,29 +74,29 @@ window.addEventListener('DOMContentLoaded', function () {
                 //this.categories = _db.categories;
                 //
                 //this.game.quiz.categories =_db.categories;
-               /* for (var cat of _db.categories) {
-                    var newCategories = new Category();
+                /* for (var cat of _db.categories) {
+                     var newCategories = new Category();
 
-                    newCategories.hydrate(cat);
+                     newCategories.hydrate(cat);
 
-                    this.game.quiz.categories.push(newCategories);
-                }*/
+                     this.game.quiz.categories.push(newCategories);
+                 }*/
 
                 this.game.quiz.categories = _db.categories.map(item => new Category().hydrate(item));
 
                 console.log("App Categories loaded");
             },
-            loadQuestions: function(_event){
+            loadQuestions: function (_event) {
                 var db = new Db();
                 db.loadQuestions(_event.target.dataset.id, this.getQuestions);
                 console.log(_event.target.dataset.id);
             },
-            getQuestions: function(_db) {
+            getQuestions: function (_db) {
                 this.questions = _db.questions;
                 console.log("App Questions loaded");
             },
-            gameStarted: function() {
-                this.game.started= true;
+            gameStarted: function () {
+                this.game.started = true;
             },
         },
     });
@@ -112,20 +120,20 @@ window.addEventListener('DOMContentLoaded', function () {
     var modalSecondary = document.querySelector("#modalSecondary");
 
 
-    btnScore.addEventListener("click", function() {
+    btnScore.addEventListener("click", function () {
         modalPrincipal.style = 'display:block;';
     });
-  
-    btnClose.addEventListener("click", function() {
+
+    btnClose.addEventListener("click", function () {
         modalPrincipal.style = 'display:none;';
     });
 
-    btnReponse.addEventListener("click", function(){
-        modalSecondary.style='display:block;';
+    btnReponse.addEventListener("click", function () {
+        modalSecondary.style = 'display:block;';
     });
 
     btnCloseTotal.addEventListener("click", function () {
-        modalSecondary.style='display:none;';
+        modalSecondary.style = 'display:none;';
         modalPrincipal.style = 'display:none;';
     });
 
@@ -135,16 +143,16 @@ window.addEventListener('DOMContentLoaded', function () {
     var titre = document.querySelector('.titre');
 
     var btnStart = document.querySelector("#btnStart");
-    btnStart.addEventListener("click", function() {
+    btnStart.addEventListener("click", function () {
         mainContent.style = 'display:none;';
-        centerQuiz.style =  'display:flex';
-        btnStart.style= 'display:none';
+        centerQuiz.style = 'display:flex';
+        btnStart.style = 'display:none';
     });
 
     btnBack = document.querySelector(".back");
 
-    btnBack.addEventListener("click", function() {
-        document.querySelector("#modalSecondary").style="display:none;";
+    btnBack.addEventListener("click", function () {
+        document.querySelector("#modalSecondary").style = "display:none;";
     });
 
 });

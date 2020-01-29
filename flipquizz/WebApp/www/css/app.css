@@ -14,11 +14,11 @@ header h1 {
 }
 
 #vue {
-    width: 90vw;
-    height: 85%;
+    width: 98vw;
+    height: 96vh;
     background-color: #f0f8ff36;
     margin: auto;
-    margin-top: 55px;
+    margin-top: 15px;
     padding: 0;
     -webkit-box-shadow: 0px 0px 14px 2px rgba(255, 255, 255, 1);
     -moz-box-shadow: 0px 0px 14px 2px rgba(255, 255, 255, 1);
@@ -93,7 +93,7 @@ h2 {
     position: relative;
 }
 
-.quizTheme {
+.quiz_theme {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -103,7 +103,7 @@ h2 {
 
 }
 
-.quizTheme input {
+.quiz_theme input {
     width: 25px;
     height: 25px;
 }
@@ -117,7 +117,7 @@ h2 {
     width: 150px;
 }
 
-.start input {
+#btnStart {
     padding: 20px;
     font-size: 30px;
     margin: 10px 0px;
@@ -201,15 +201,19 @@ h3 {
     padding: 10px 40px;
     text-align: center;
     border-radius: 10px;
+    width: 150px;
 }
 
 .theme {
     background-color: #00000062;
+    height: 10%;
 }
 
 .theme h2 {
     color: #000;
     padding: 10px;
+    width: 150px;
+
 }
 
 #modalPrincipal,
@@ -279,7 +283,7 @@ h3 {
     background-size: 100% 100%;
     width: 35px;
     height: 35px;
-    margin: 10px;
+    margin: 25px;
 }
 .back_main{
     position: absolute;
