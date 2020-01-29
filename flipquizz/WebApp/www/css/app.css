@@ -1,40 +1,84 @@
 body {
     text-align: center;
     background-image: url("../img/uk2.jpg");
-    background-size: cover;
+    background-size: 100% 100%;
     /*font-family: 'Fredericka the Great', cursive;*/
     /* font-family: 'Nanum Brush Script', cursive; */
 }
+header{
 
+}
 header h1 {
-    font-size: 60px;
+    font-size: 70px;
     color: white;
-    background-color: #00000062;
+    background-color: #0000007c;
     margin: 0;
+    padding: 10px;
 }
 
 #vue {
-    width: 98vw;
-    height: 96vh;
     background-color: #f0f8ff36;
-    margin: auto;
-    margin-top: 15px;
+    width: 95vw;
+    height: 95vh;
+    margin: 15px auto;
     padding: 0;
+ 
     -webkit-box-shadow: 0px 0px 14px 2px rgba(255, 255, 255, 1);
     -moz-box-shadow: 0px 0px 14px 2px rgba(255, 255, 255, 1);
     box-shadow: 0px 0px 14px 2px rgba(255, 255, 255, 1);
 }
 
 .main {
-    height: 60vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
 }
+.start_conf{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 450px;
+    height: 150px;
+    font-size: 45px;
+}
+.quiz-container{
+    background-color: #00000060;
+    height: 80vh;
+    margin: 20px;
+}
 
+.quiz_theme {
+    font-size: 25px;
+    margin: 20px;
+    color: white;
+}
+
+.quiz_theme input {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+.quiz_theme label{
+    font-size: 35px;
+}
+
+.category-container {
+    display: inline-flex;
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+}
+.next{
+    width: 350px;
+    height: 100px;
+    font-size: 45px;
+    padding: 20px;
+}
 .team-container {
-    flex: 1;
     text-align: center;
+    height: 65vh;
     margin: 20px;
     background-color: #00000062;
     font-weight: bold;
@@ -42,28 +86,27 @@ header h1 {
 .btn {
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 350px;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
-    font-size: 20px;
 }
 .team {
     padding: 10px;
     margin: auto;
     width: 250px;
-    font-size: 1.4em;
+    font-size: 1.8em;
     background-color: #f0f8ff3b;
     display: flex;
     flex-direction: column;
 
 }
 
-h2 {
+.btn h2 {
     font-weight: bold;
     color: aliceblue;
+    font-size: 45px;
     margin: 0;
-    
 }
 
 .btnPlus {
@@ -86,37 +129,6 @@ h2 {
     background-image: url('../img/moin.png');
 }
 
-.quiz-container {
-    flex: 1;
-    margin: 20px;
-    background-color: #00000062;
-    position: relative;
-}
-
-.quiz_theme {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-size: 25px;
-    margin: 20px;
-    color: white;
-
-}
-
-.quiz_theme input {
-    width: 25px;
-    height: 25px;
-}
-
-.category-container {
-    display: inline-block;
-    font-size: 25px;
-    color: white;
-    font-weight: bold;
-    padding: 20px;
-    width: 150px;
-}
-
 #btnStart {
     padding: 20px;
     font-size: 30px;
@@ -136,7 +148,6 @@ h2 {
     align-items: stretch;
     justify-content: center;
     background-color: #00000099;
-    margin-top: 30px;
     padding: 15px;
 }
 
@@ -178,12 +189,11 @@ h2 {
 /*center*/
 
 .right {
-    /*display: flex;*/
-    display:none;
+    display: flex;
     justify-content: center;
     text-align: center;
     background-color: #00000062;
-    margin-top: 50px;
+    margin: 20px;
 }
 
 h3 {
@@ -281,9 +291,9 @@ h3 {
     border: 0;
     background-image: url("../img/reload.png");
     background-size: 100% 100%;
-    width: 35px;
-    height: 35px;
-    margin: 25px;
+    width: 40px;
+    height: 40px;
+    margin: 35px 60px;
 }
 .back_main{
     position: absolute;

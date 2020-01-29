@@ -16,6 +16,7 @@ window.addEventListener('DOMContentLoaded', function () {
             // isActive: false
             disabled:false,
             disabled_conf: false,
+            disabled_btn:false,
         },
         mounted: function () {
             //function de reapel
@@ -32,9 +33,16 @@ window.addEventListener('DOMContentLoaded', function () {
                 var db = new Db();
                 db.loadQuizzes(this.getQuizzes);
                 this.disabled_conf=true;
+                this.disabled_btn=false;
             },
             clickAddTeams: function (){
                 this.disabled= true;
+                this.disabled_conf=false;
+                this.disabled_btn=true;
+            },
+            gameStarted: function () {
+                this.game.started = true;
+                this.disabled= false;
             },
             addTeam: function () {
                 if (this.game.teams.length < 4) {
@@ -95,9 +103,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 this.questions = _db.questions;
                 console.log("App Questions loaded");
             },
-            gameStarted: function () {
-                this.game.started = true;
-            },
+
         },
     });
 
@@ -138,21 +144,21 @@ window.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    var mainContent = document.querySelector(".main");
-    var centerQuiz = document.querySelector(".right");
-    var titre = document.querySelector('.titre');
+    // var mainContent = document.querySelector(".main");
+    // var centerQuiz = document.querySelector(".right");
+    // var titre = document.querySelector('.titre');
 
-    var btnStart = document.querySelector("#btnStart");
-    btnStart.addEventListener("click", function () {
-        mainContent.style = 'display:none;';
-        centerQuiz.style = 'display:flex';
-        btnStart.style = 'display:none';
-    });
+    // var btnStart = document.querySelector("#btnStart");
+    // btnStart.addEventListener("click", function () {
+    //     mainContent.style = 'display:none;';
+    //     centerQuiz.style = 'display:flex';
+    //     btnStart.style = 'display:none';
+    // });
 
-    btnBack = document.querySelector(".back");
+    // btnBack = document.querySelector(".back");
 
-    btnBack.addEventListener("click", function () {
-        document.querySelector("#modalSecondary").style = "display:none;";
-    });
+    // btnBack.addEventListener("click", function () {
+    //     document.querySelector("#modalSecondary").style = "display:none;";
+    // });
 
 });

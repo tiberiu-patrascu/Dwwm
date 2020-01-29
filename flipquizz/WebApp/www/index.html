@@ -24,29 +24,29 @@
             <h1 class="titre">{{ game.quiz.quiz_theme }}</h1>
         </header>
 
-        <input type="button" class="start_conf" value="Start Configuration" v-if="!disabled_conf"
-            v-on:click="clickConf">
 
-        <div class="quiz-container" v-if="!disabled">
-            <div>
-                <article v-for="quiz in quizzes" class="quiz_theme">
+        <main class="main">
+        <input type="button" class="start_conf" value="Start Configuration" v-if="!disabled_conf & !disabled_btn"
+            v-on:click="clickConf">
+            <div class="quiz-container" v-if="disabled_conf">
+                <div v-for="quiz in quizzes" class="quiz_theme">
                     <input type="radio" name="the_quiz" :id="quiz.quiz_id" :data-id="quiz.quiz_id"
                         v-on:change="loadCategories">
                     <label for="">{{ quiz.quiz_theme }}</label>
-                </article>
-            </div>
+                </div>
 
-            <div v-if="game.quiz.categories.length > 0">
-                <article class="category-container" v-for="category in game.quiz.categories">
+                <div class="category-container" v-for="category in game.quiz.categories"
+                    v-if="game.quiz.categories.length > 0">
                     <label for="">{{ category.category_name }}</label>
-                </article>
+                </div>
+
+                <div>
+                    <input type="button" value="Next" class="next" v-if="game.quiz.categories.length > 0" v-on:click="clickAddTeams">
+                </div>
+
             </div>
-            <input type="button" value="Next" v-if="game.quiz.categories.length > 0" v-on:click="clickAddTeams">
-        </div>
 
-        <main class="main" v-if="disabled">
-
-            <div class="team-container">
+            <div class="team-container" v-if="disabled">
                 <article class="btn">
                     <h2>Number of teams</h2>
                     <button class="btnPlus" v-on:click="addTeam()"></button>
@@ -57,18 +57,17 @@
                     <label for="">{{ team.name }}</label>
                     <input v-model="team.name">
                 </article>
-                            <article class="start">
-                <input type="button" id="btnStart" value="Start the quiz"
-                    :disabled="game.teams.length > 0 ? false : true ">
-                <!-- v-on:click='gameStarted' -->
-            </article>
+                <article class="start">
+                    <input type="button" id="btnStart" value="Play the quiz"
+                        :disabled="game.teams.length > 0 ? false : true " v-on:click='gameStarted'>
+                </article>
             </div>
         </main>
 
 
 
-        <section class="right">
-            <!-- <input type="button" class="back_main" v-if="!game.started"> -->
+        <section class="right" v-if="game.started">
+            <!-- <input type="button" class="back_main" > -->
             <article>
                 <header class="theme">
                     <h2>ThemeTheme ThemeTheme</h2>
