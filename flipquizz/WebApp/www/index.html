@@ -47,8 +47,9 @@
             </div>
 
             <div class="team-container" v-if="disabled">
+                                    <h2>Number of teams</h2>
                 <article class="btn">
-                    <h2>Number of teams</h2>
+
                     <button class="btnPlus" v-on:click="addTeam()"></button>
                     <button class="btnMinus" v-if="game.teams.length > 0" v-on:click="deleteTeam()"></button>
                 </article>
