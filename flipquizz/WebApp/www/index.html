@@ -26,8 +26,8 @@
 
 
         <main class="main">
-        <input type="button" class="start_conf" value="Start Configuration" v-if="!disabled_conf & !disabled_btn"
-            v-on:click="clickConf">
+            <input type="button" class="start_conf" value="Start Configuration" v-if="!disabled_conf & !disabled_btn"
+                v-on:click="clickConf">
             <div class="quiz-container" v-if="disabled_conf">
                 <div v-for="quiz in quizzes" class="quiz_theme">
                     <input type="radio" name="the_quiz" :id="quiz.quiz_id" :data-id="quiz.quiz_id"
@@ -41,13 +41,14 @@
                 </div>
 
                 <div>
-                    <input type="button" value="Next" class="next" v-if="game.quiz.categories.length > 0" v-on:click="clickAddTeams">
+                    <input type="button" value="Next" class="next" v-if="game.quiz.categories.length > 0"
+                        v-on:click="clickAddTeams">
                 </div>
 
             </div>
 
             <div class="team-container" v-if="disabled">
-                                    <h2>Number of teams</h2>
+                <h2>Number of teams</h2>
                 <article class="btn">
 
                     <button class="btnPlus" v-on:click="addTeam()"></button>
