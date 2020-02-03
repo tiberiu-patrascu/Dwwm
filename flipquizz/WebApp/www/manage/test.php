@@ -8,9 +8,9 @@ $username = 'Tib';
 
 $test = new Models\AccountManager;
 
-$tib=$test->getUser($username);
+//$tib=$test->getUser($username);
 
-d($tib);
+//d($tib);
 
 // echo (__DIR__);
 // echo ('<hr>');
@@ -21,6 +21,14 @@ d($tib);
 
 // d($test);
 
-$inexistent = $test->getUser(1234);
+//$inexistent = $test->getUser(1234);
 
-d($inexistent);
+//d($inexistent);
+
+$test->addUser('euuur','azerty','eu@fr.fr');
+
+//d($test);
+$test->addUser('vali','poiuy','tre@yh.fr');
+
+//d($test);
+

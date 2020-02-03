@@ -22,8 +22,25 @@ class AccountManager
             //return du account envoie la valeur la est se trouve dans notre methode maintenant 
             $this->accounts = (require $this->filePath);
         } else {
-            exit('Fichier introuvable');
+            //exit('Fichier introuvable');
         }
+    }
+
+    /**
+     * sauvgarde les fichier
+     */
+    public function save()
+    {
+
+        $content = '<?php return ';
+
+        //true exporte la variable
+        // .concatenation et ajouter de contenu
+        $content .= var_export($this->accounts, true);
+
+        $content .= ';';
+
+        \file_put_contents($this->filePath, $content);
     }
 
     /**
@@ -63,7 +80,7 @@ class AccountManager
 
         //strlen conter les nombres de caracteres
 
-        foreach ($this->accounts as $key => $userinfo) {
+        foreach ($this->accounts as $userinfo) {
             if ($userinfo['username'] === $_username) {
                 return new Account($userinfo);
             }
@@ -73,12 +90,36 @@ class AccountManager
     }
 
     /**
+     * Retourner la collection d'utilisateurs 
+     * @return array la collection d'utilisateur
+     */
+    public function getAccounts() :array
+    {
+
+
+        return $this->accounts;
+    }
+
+    /**
      *Vérifie si un utilisateur $_username existe et controle la correspondance de mot des passer 
      *Renvoie true en cas de succès et false en cas d'erreur 
      */
-    public function login($_username, $_password): bool
+    public function login($_username): bool
     {
+        if (!$this->validUsername($_username) ) {
+            return false;
+        }
+
+
+        foreach($this->accounts as $user){
+            if ($user['username'] !== $_username) {
+                return false;
+            }
+        }
+
+        echo('true');
         return true;
+
     }
 
     /**
@@ -96,21 +137,27 @@ class AccountManager
         }
         $newUser = [
             'username' => $_username,
-            'password' => $_password,
+            //
+            'password' => \password_hash($_password,PASSWORD_BCRYPT),
             'email' => $_email,
         ];
 
-        if (!empty($_username)) {
-            foreach ($this->accounts as $user) {
-                if ($user['username'] !== $_username) {
-                    return new Account($user);
-                    var_dump($newUser);
-                }
-            }
-            return false;
-        }
+        //[] ajoute a la intre suivante à la collection de donnes
+        $this->accounts[] = $newUser;
 
-        
+        //passer par une function plus lent
+        //\array_push($this->accounts, $newUser);
+
+        // foreach ($this->accounts as $user) {
+        //     if ($user['username'] !== $_username) {
+        //         return new Account($user);
+        //         var_dump($newUser);
+        //     }
+        // }
+
+        $this->save();
+
+        return true;
     }
 
     /**
